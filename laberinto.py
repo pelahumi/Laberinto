@@ -35,7 +35,7 @@ def crear_laberinto(tamano, muros):
 
         laberinto.append(fila)
     return laberinto
-maze = crear_laberinto(5,muros)
+maze = crear_laberinto(6,muros)
 
 for i in maze:
     print("".join(i))
@@ -49,21 +49,21 @@ def solucion_laberinto(laberinto):
     solucion = ["Abajo"]
     #Bucle para que encuentre la salida
     while (fila < n-1 and columna < n-1):
-        if solucion[-1] != "Arriba" and fila + 1 < n and laberinto[fila + 1][columna] != X:
+        if solucion[-1] != "Arriba" and fila + 1 < n and laberinto[fila + 1][columna] != "X":
             fila += 1
             solucion.append("Abajo")
-        if solucion[-1] != "Abajo" and fila - 1 > 0 and laberinto[fila - 1][columna] != X:
+        if solucion[-1] != "Abajo" and fila - 1 > 0 and laberinto[fila - 1][columna] != "X":
             fila -= 1 
             solucion.append("Arriba")
-        if solucion[-1] != "Izquierda" and columna + 1 < n and laberinto[fila][columna + 1] != X:
+        if solucion[-1] != "Izquierda" and columna + 1 < n and laberinto[fila][columna + 1] != "X":
             columna += 1
             solucion.append("Derecha")
-        else:
+        if solucion[-1] != "Derecha" and columna - 1 > 0 and laberinto[fila][columna - 1] != "X":
             columna -= 1
             solucion.append("Izquierda")
     return solucion
     #Nos almacena cada movimiento en la lista de solucion
 
-print("Para encontrar la salida del laberinto tienes que seguir los siguientes pasos: ", end=" ")
-print(solucion_laberinto(maze))
+print("Para encontrar la salida del laberinto tienes que seguir los siguientes pasos: " + str(solucion_laberinto(maze)))
+
     
