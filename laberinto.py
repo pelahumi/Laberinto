@@ -45,6 +45,7 @@ for i in maze:
 def solucion_laberinto(laberinto):
     fila = 0
     columna = 0
+    n = 6
     solucion = ["Abajo"]
     #Bucle para que encuentre la salida
     while (fila < n-1 and columna < n-1):
@@ -54,9 +55,9 @@ def solucion_laberinto(laberinto):
         if solucion[-1] != "Abajo" and fila - 1 > 0 and laberinto[fila - 1][columna] != X:
             fila -= 1 
             solucion.append("Arriba")
-        if solucion[-1] != "Izquierda" and columna + 1 < n and laberinoto[fila][columna + 1] != X:
+        if solucion[-1] != "Izquierda" and columna + 1 < n and laberinto[fila][columna + 1] != X:
             columna += 1
-            solucion..append("Derecha")
+            solucion.append("Derecha")
         else:
             columna -= 1
             solucion.append("Izquierda")
