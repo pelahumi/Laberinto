@@ -21,6 +21,16 @@ def crear_laberinto(tamaño, muros):
     #La siguiente función creará el laberinto
 
     laberinto=[]
-    for i in range(dimension):
+    for i in range(tamaño):
         fila = []
         #Este bucle recorrerá las filas del laberinto y las añadirá a la lista fila
+        
+        for j in range(tamaño):
+            if tuple([i,j]) in muros:
+                fila.append("X")
+            else:
+                fila.append(" ")
+        #Condicionales para saber si la coordenada es un muro o un espacio libre
+        
+        laberinto.append(fila)
+    
