@@ -15,3 +15,12 @@ muros = (
     (4,3),(4,4)
     (5,3),(5,4)
     (6,0),(6,1),(6,2),(6,3),(6,4))
+
+
+def crear_laberinto(tamaño, muros):
+    #La siguiente función creará el laberinto
+
+    laberinto=[]
+    for i in range(dimension):
+        fila = []
+        #Este bucle recorrerá las filas del laberinto y las añadirá a la lista fila
