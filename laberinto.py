@@ -63,5 +63,6 @@ def solucion_laberinto(laberinto):
     return solucion
     #Nos almacena cada movimiento en la lista de solucion
 
-
+print("Para encontrar la salida del laberinto tienes que seguir los siguientes pasos: ", end=" ")
+print(solucion_laberinto(maze))
     
