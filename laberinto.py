@@ -39,4 +39,29 @@ maze = crear_laberinto(5,muros)
 
 for i in maze:
     print("".join(i))
+
+#2º parte
+
+def solucion_laberinto(laberinto):
+    fila = 0
+    columna = 0
+    solucion = ["Abajo"]
+    #Bucle para que encuentre la salida
+    while (fila < n-1 and columna < n-1):
+        if solucion[-1] != "Arriba" and fila + 1 < n and laberinto[fila + 1][columna] != X:
+            fila += 1
+            solucion.append("Abajo")
+        if solucion[-1] != "Abajo" and fila - 1 > 0 and laberinto[fila - 1][columna] != X:
+            fila -= 1 
+            solucion.append("Arriba")
+        if solucion[-1] != "Izquierda" and columna + 1 < n and laberinoto[fila][columna + 1] != X:
+            columna += 1
+            solucion..append("Derecha")
+        else:
+            columna -= 1
+            solucion.append("Izquierda")
+    return solucion
+    #Nos almacena cada movimiento en la lista de solucion
+
+
     
